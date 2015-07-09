@@ -47,6 +47,16 @@ public class IconTextView extends TextView {
 
             //计算图像绘制到目标区域的纵坐标
             target.top = (int)((getMeasuredHeight() - getTextSize())/2) + 1;
+            target.bottom = target.top + textHeight;
+
+            //为了保证图像不变形，根据图像高度重新计算图像的宽度
+            target.right = (int)(textHeight*(bitmap.getWidth()/(float)bitmap.getHeight()));
+
+            //开始绘制图像
+            canvas.drawBitmap(bitmap, src, target, getPaint());
+
+            //将TextView中的文本向右移动一定距离
+            canvas.translate(target.right + 2, 0);
 
         }
         super.onDraw(canvas);
