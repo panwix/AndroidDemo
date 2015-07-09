@@ -47,6 +47,7 @@ public class IconTextView extends TextView {
 
             //计算图像绘制到目标区域的纵坐标
             target.top = (int)((getMeasuredHeight() - getTextSize())/2) + 1;
+
         }
         super.onDraw(canvas);
     }
