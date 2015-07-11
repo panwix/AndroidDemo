@@ -16,16 +16,18 @@ public class LabelEditText extends LinearLayout {
     private String labelText;
     private int labelFontSize;
     private String labelPosition;
+    private final String namespace = "http://com.panwix.mobile";
+
 
     public LabelEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         //读取labelText属性值
-        int resourceId = attrs.getAttributeResourceValue(null, "labelText", 0);
+        int resourceId = attrs.getAttributeResourceValue(namespace, "labelText", 0);
 
         //resourceId为0，可能时字符串
         if(resourceId == 0)
-            labelText = attrs.getAttributeValue(null, "labelText");
+            labelText = attrs.getAttributeValue(namespace, "labelText");
         else
             labelText = getResources().getString(resourceId);
 
@@ -34,16 +36,16 @@ public class LabelEditText extends LinearLayout {
             throw new RuntimeException("必须设置labelText属性值");
 
         //获取labelFontSize属性值
-        resourceId = attrs.getAttributeResourceValue(null, "labelFontSize", 0);
+        resourceId = attrs.getAttributeResourceValue(namespace, "labelFontSize", 0);
         if(resourceId == 0)
-            labelFontSize = attrs.getAttributeIntValue(null, "labelFontSize", 14);
+            labelFontSize = attrs.getAttributeIntValue(namespace, "labelFontSize", 14);
         else
             labelFontSize = getResources().getInteger(resourceId);
 
         //获取labelPosition属性值
-        resourceId = attrs.getAttributeResourceValue(null, "labelPosition", 0);
+        resourceId = attrs.getAttributeResourceValue(namespace, "labelPosition", 0);
         if(resourceId == 0)
-            labelPosition = attrs.getAttributeValue(null, "labelPosition");
+            labelPosition = attrs.getAttributeValue(namespace, "labelPosition");
         else
             labelPosition = getResources().getString(resourceId);
         if(labelPosition == null)

@@ -1,18 +1,19 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mobile="http://com.panwix.mobile"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.panwix.androiddemo.widget.LabelEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        labelText="@string/name"
-        labelFontSize="16"
-        labelPosition="left"/>
+        mobile:labelText="@string/name"
+        mobile:labelFontSize="16"
+        mobile:labelPosition="left"/>
     <com.panwix.androiddemo.widget.LabelEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        labelText="@string/interests"
-        labelFontSize="16"
-        labelPosition="top"/>
+        mobile:labelText="@string/interests"
+        mobile:labelFontSize="16"
+        mobile:labelPosition="top"/>
 </LinearLayout>
