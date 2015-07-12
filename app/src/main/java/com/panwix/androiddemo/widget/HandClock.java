@@ -63,7 +63,7 @@ public class HandClock extends View implements Runnable{
         float centerY = bitmap.getHeight()*scale*handCenterHeightScale;
         //画表盘中心点
         canvas.drawCircle(centerX, centerY, 5, paint);
-        //设置分针为3个像素
+        //设置分针为8个像素
         paint.setStrokeWidth(8);
         Calendar calendar = Calendar.getInstance();
         int currentMinute = calendar.get(Calendar.MINUTE);
@@ -74,7 +74,7 @@ public class HandClock extends View implements Runnable{
         //在表盘上画分针
         canvas.drawLine(centerX, centerY, (int)(centerX+minuteHandSize*Math.cos(minuteRadian)),
                 (int)(centerY - minuteHandSize*Math.sin(minuteRadian)),paint);
-        //设置时针为4个像素
+        //设置时针为10个像素
         paint.setStrokeWidth(10);
         //在表盘上画时针
         canvas.drawLine(centerX, centerY, (int)(centerX+hourHandSize*Math.cos(hourRadian)),
